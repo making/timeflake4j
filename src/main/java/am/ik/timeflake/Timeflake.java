@@ -168,8 +168,7 @@ public final class Timeflake implements java.io.Serializable, Comparable<Timefla
 	 */
 	@Deprecated
 	public static Timeflake fromBase62(String base62) {
-		final BigInteger value = Base62.decode(base62);
-		return new Timeflake(value);
+		return valueOf(base62);
 	}
 
 	/**
