@@ -113,13 +113,22 @@ public final class Timeflake implements java.io.Serializable, Comparable<Timefla
 		return new Timeflake(value);
 	}
 
+
+	/**
+	 * Use {@link #valueOf(UUID)} instead
+	 */
+	@Deprecated
+	public static Timeflake fromUuid(UUID uuid) {
+		return valueOf(uuid);
+	}
+
 	/**
 	 * Create a Snowflake instance from an UUID
 	 * @param uuid UUID
 	 * @return Snowflake instance
 	 * @throws IllegalArgumentException if the given value exceeds the max value
 	 */
-	public static Timeflake fromUuid(UUID uuid) {
+	public static Timeflake valueOf(UUID uuid) {
 		final BigInteger value = Util.uuid2BigInteger(uuid);
 		return new Timeflake(value);
 	}
@@ -155,12 +164,21 @@ public final class Timeflake implements java.io.Serializable, Comparable<Timefla
 	}
 
 	/**
+	 * Use {@link #valueOf(String)} instead
+	 */
+	@Deprecated
+	public static Timeflake fromBase62(String base62) {
+		final BigInteger value = Base62.decode(base62);
+		return new Timeflake(value);
+	}
+
+	/**
 	 * Create a Snowflake instance from a base62 encoded string
 	 * @param base62 base62 encoded snowflake
 	 * @return Snowflake instance
 	 * @throws IllegalArgumentException if the given value exceeds the max value
 	 */
-	public static Timeflake fromBase62(String base62) {
+	public static Timeflake valueOf(String base62) {
 		final BigInteger value = Base62.decode(base62);
 		return new Timeflake(value);
 	}

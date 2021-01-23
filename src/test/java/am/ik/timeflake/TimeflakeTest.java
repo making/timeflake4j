@@ -30,7 +30,7 @@ class TimeflakeTest {
 
 	@Test
 	void fromUuid() {
-		final Timeflake timeflake = Timeflake.fromUuid(UUID.fromString("016fa936-bff0-997a-0a3c-428548fee8c9"));
+		final Timeflake timeflake = Timeflake.valueOf(UUID.fromString("016fa936-bff0-997a-0a3c-428548fee8c9"));
 		assertThat(timeflake.value()).isEqualTo(new BigInteger("1909005012028578488143182045514754249"));
 		assertThat(timeflake.toInstant().toEpochMilli()).isEqualTo(1579091935216L);
 		assertThat(timeflake.base62()).isEqualTo("2i1KoFfY3auBS745gImbZ");
@@ -46,7 +46,7 @@ class TimeflakeTest {
 
 	@Test
 	void fromBase62() {
-		final Timeflake timeflake = Timeflake.fromBase62("2i1KoFfY3auBS745gImbZ");
+		final Timeflake timeflake = Timeflake.valueOf("2i1KoFfY3auBS745gImbZ");
 		assertThat(timeflake.value()).isEqualTo(new BigInteger("1909005012028578488143182045514754249"));
 		assertThat(timeflake.toInstant().toEpochMilli()).isEqualTo(1579091935216L);
 		assertThat(timeflake.toUuid()).isEqualTo(UUID.fromString("016fa936-bff0-997a-0a3c-428548fee8c9"));
