@@ -96,12 +96,20 @@ public final class Timeflake implements java.io.Serializable, Comparable<Timefla
 	}
 
 	/**
+	 * Use {@link #valueOf(BigInteger)} instead
+	 */
+	@Deprecated
+	public static Timeflake of(BigInteger value) {
+		return valueOf(value);
+	}
+
+	/**
 	 * Create a Snowflake instance from a 128-bit big integer.
 	 * @param value 128-bit internal representation of a Snowflake.
 	 * @return Snowflake instance
 	 * @throws IllegalArgumentException if the given value exceeds the max value
 	 */
-	public static Timeflake of(BigInteger value) {
+	public static Timeflake valueOf(BigInteger value) {
 		return new Timeflake(value);
 	}
 
@@ -133,6 +141,17 @@ public final class Timeflake implements java.io.Serializable, Comparable<Timefla
 		final BigInteger timestamp = BigInteger.valueOf(timestampMillis);
 		final BigInteger value = timestamp.shiftLeft(80).or(random);
 		return new Timeflake(value);
+	}
+
+	/**
+	 * Create a Snowflake instance from timestamp and random value
+	 * @param timestamp 48-bit timestamp part of a snowflake
+	 * @param random 80-bit random part of a snowflake
+	 * @return Snowflake instance
+	 * @throws IllegalArgumentException if the given value exceeds the max value
+	 */
+	public static Timeflake create(Instant timestamp, BigInteger random) {
+		return create(timestamp.toEpochMilli(), random);
 	}
 
 	/**
