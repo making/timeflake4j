@@ -12,7 +12,7 @@ Java implementation of [Timeflake](https://github.com/anthonynsimon/timeflake).
 <dependency>
     <groupId>am.ik.timeflake</groupId>
     <artifactId>timeflake4j</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
@@ -28,7 +28,7 @@ System.out.println(timeflake.toInstant()); // 2021-01-23T12:10:25.395Z (java.tim
 System.out.println(timeflake.base62()); // 2lSUuPgi2bGXfZde730O2 (String)
 ```
 
-`TheadLocalRandom` is used to generate a random number. You can change `Random` instance as follows:
+`TheadLocalRandom` is used to generate a random number by default. You can change `Random` instance as follows:
 
 ```java
 final Timeflake timeflake = Timeflake.generate(new SecureRandom());
@@ -53,16 +53,16 @@ System.out.println(timeflake.value());  // 1948067690345842174618850429941262698
 from a big integer value
 
 ```java
-final Timeflake timeflake = Timeflake.of(new BigInteger("1948067690345842174618850429941262698"));
+final Timeflake timeflake = Timeflake.valueOf(new BigInteger("1948067690345842174618850429941262698"));
 System.out.println(timeflake.value());  // 1948067690345842174618850429941262698
 ```
 
 from a 48-bit timestamp and 80-bit random part
 
 ```java
-final long timeMillis = System.currentTimeMillis();
+final Instant timestamp = Instant.now();
 final BigInteger random = new BigInteger(80, ThreadLocalRandom.current());
-final Timeflake timeflake = Timeflake.create(timeMillis, random);
+final Timeflake timeflake = Timeflake.create(timestamp, random);
 ```
 
 ## Note on security
