@@ -12,7 +12,7 @@ Java implementation of [Timeflake](https://github.com/anthonynsimon/timeflake).
 <dependency>
     <groupId>am.ik.timeflake</groupId>
     <artifactId>timeflake4j</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 </dependency>
 ```
 
@@ -39,14 +39,14 @@ final Timeflake timeflake = Timeflake.generate(new SecureRandom());
 from an `UUID` instance
 
 ```java
-final Timeflake timeflake = Timeflake.fromUuid(UUID.fromString("01772f27-10f3-091a-ea3f-28e7f6f7296a"));
+final Timeflake timeflake = Timeflake.valueOf(UUID.fromString("01772f27-10f3-091a-ea3f-28e7f6f7296a"));
 System.out.println(timeflake.value());  // 1948067690345842174618850429941262698
 ```
 
 from a base62 encoded string
 
 ```java
-final Timeflake timeflake = Timeflake.fromBase62("2lSUuPgi2bGXfZde730O2");
+final Timeflake timeflake = Timeflake.valueOf("2lSUuPgi2bGXfZde730O2");
 System.out.println(timeflake.value());  // 1948067690345842174618850429941262698
 ```
 
