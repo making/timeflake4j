@@ -77,9 +77,13 @@ public final class Timeflake implements java.io.Serializable, Comparable<Timefla
 		this.value = value;
 	}
 
+	/**
+	 * Encode the snowflake to Base62 string
+	 * @return base62 encoded snowflake
+	 */
 	@Override
 	public String toString() {
-		return Objects.toString(this.value);
+		return this.base62();
 	}
 
 	@Override
