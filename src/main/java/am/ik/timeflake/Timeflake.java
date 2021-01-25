@@ -224,6 +224,14 @@ public final class Timeflake implements java.io.Serializable, Comparable<Timefla
 	}
 
 	/**
+	 * Convert the snowflake to byte[]
+	 * @return byte[] representation of the snowflake
+	 */
+	public byte[] toByteArray() {
+		return this.value.toByteArray();
+	}
+
+	/**
 	 * Encode the snowflake to Base62 string
 	 * @return base62 encoded snowflake
 	 */
