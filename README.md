@@ -1,6 +1,6 @@
 # Timeflake4j
 
-[![MIT License](https://img.shields.io/github/license/making/timeflake4j.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/am.ik.timeflake/timeflake4j/badge.svg)](https://maven-badges.herokuapp.com/maven-central/am.ik.timeflake/timeflake4j) [![Javadocs](https://www.javadoc.io/badge/am.ik.timeflake/timeflake4j.svg)](https://www.javadoc.io/doc/am.ik.timeflake/timeflake4j) [![Actions Status](https://github.com/making/timeflake4j/workflows/CI/badge.svg)](https://github.com/making/timeflake4j/actions)
+[![MIT License](https://img.shields.io/github/license/making/timeflake4j.svg)](https://opensource.org/licenses/MIT) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/am.ik.timeflake/timeflake4j/badge.svg)](https://maven-badges.herokuapp.com/maven-central/am.ik.timeflake/timeflake4j) [![Javadocs](https://www.javadoc.io/badge/am.ik.timeflake/timeflake4j.svg)](https://www.javadoc.io/doc/am.ik.timeflake/timeflake4j) [![Actions Status](https://github.com/making/timeflake4j/workflows/CI/badge.svg)](https://github.com/making/timeflake4j/actions)
 
 Java implementation of [Timeflake](https://github.com/anthonynsimon/timeflake).
 
