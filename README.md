@@ -69,6 +69,10 @@ final Timeflake timeflake = Timeflake.create(timestamp, random);
 
 See [the original warning](https://github.com/anthonynsimon/timeflake#note-on-security).
 
+## Note on privacy
+
+See [the original warning](https://github.com/anthonynsimon/timeflake#note-on-privacy).
+
 ## Required
 
 * Java 8+
