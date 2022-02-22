@@ -12,7 +12,7 @@ Java implementation of [Timeflake](https://github.com/anthonynsimon/timeflake).
 <dependency>
     <groupId>am.ik.timeflake</groupId>
     <artifactId>timeflake4j</artifactId>
-    <version>1.3.0</version>
+    <version>1.4.0</version>
 </dependency>
 ```
 
